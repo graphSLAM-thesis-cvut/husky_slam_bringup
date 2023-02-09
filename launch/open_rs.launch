@@ -3,5 +3,8 @@
         /camera/tracking_module/enable_pose_jumping: false
         /camera/tracking_module/enable_relocalization: false
     </rosparam>
-    <include file="$(find realsense2_camera)/launch/rs_t265.launch"/>
+    <node pkg="tf" type="static_transform_publisher" name="tower_to_t265_tf_node" args="0.1025 0.036 0.015 0 0 0 1 tower_cap camera_pose_frame 100" />
+    <remap from="/tf" to="/tf_dev_null_t265"/>
+    <include file="$(find realsense2_camera)/launch/rs_t265.launch">
+    </include>
 </launch>
