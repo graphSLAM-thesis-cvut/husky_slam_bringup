@@ -1,0 +1,7 @@
+<launch>
+    <rosparam>
+        /camera/tracking_module/enable_pose_jumping: false
+        /camera/tracking_module/enable_relocalization: false
+    </rosparam>
+    <include file="$(find realsense2_camera)/launch/rs_t265.launch"/>
+</launch>
