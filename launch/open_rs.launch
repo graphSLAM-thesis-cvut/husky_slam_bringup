@@ -3,7 +3,7 @@
         /camera/tracking_module/enable_pose_jumping: false
         /camera/tracking_module/enable_relocalization: false
     </rosparam>
-    <node pkg="tf" type="static_transform_publisher" name="tower_to_t265_tf_node" args="0.1025 0.036 0.015 0 0 0 1 tower_cap camera_pose_frame 100" />
+    <node pkg="tf" type="static_transform_publisher" name="ouster_to_t265_tf_node" args="0.1025 0.036 -0.07 0 0 0 1 ouster_mount_top camera_pose_frame 100" />
     <include file="$(find realsense2_camera)/launch/rs_t265.launch">
         <arg name="publish_odom_tf"                value="false"/>
     </include>
